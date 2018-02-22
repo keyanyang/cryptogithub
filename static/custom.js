@@ -30,7 +30,7 @@ regionChart
 
 companyChart
 .width(150)
-.height(500)
+.height(300)
 .dimension(companyDim)
 .group(companyGroup)
 .ordering(function(d) { return -d.value })
@@ -39,7 +39,7 @@ companyChart
 
 
 var cramps = d3.scale.linear()
-    .domain([0,15000])
+    .domain([0,5000])
     .range(['#ffeda0', '#f03b20']);
 
 
@@ -54,10 +54,14 @@ var drawMap = function(center, zoom){
 
 		//Map
         function circlesize(commits) {
-        if (commits <= 500) {
-            return 3 + commits/100;
+        if (commits <= 3000) {
+            return 5 + commits/1000;
+        } else if (commits <= 5000) {
+            return 8 + (commits-3000)/2000;
+        } else if (commits <= 15000){
+            return 9 + (commits-5000)/4000;
         } else {
-            return 8 + (commits-1000)/500;
+            return 11.5 + (commits-15000)/5000;
         }
         }
 
@@ -73,16 +77,23 @@ var drawMap = function(center, zoom){
             fillOpacity: 0.7,
             radius: circlesize(markCommits)
             });
-            circle.bindPopup("<p>" + d.name+ "</p>");
+            picUrl = d.logo;
+            circle.bindPopup(
+            "<img src='" + picUrl + "'" + " class=popupImage " + "/>" +
+            "<p>" + d.name+ "</p>" +
+            "<p>commit: " + d.commits+ "</p>" +
+            "<p>star: " + d.star+ "</p>"
+            );
             map.addLayer(circle);
       });
 
     var legend = L.control({position: 'bottomright'});
     legend.onAdd = function (map) {
     var div = L.DomUtil.create('div', 'legend'),
-        grades = ["0", "2500", "5000", "7500", "10000", "15000"],
-        labels = [0,2500,5000,7500,10000,15000];
+        grades = ["0", "500", "2000", "6000", "10000+"],
+        labels = [0,500,2000,6000,18000];
 
+    div.innerHTML += '<b style="text-align: center"> # of star </b> <hr>'
     for (var i = 0; i < grades.length; i++) {
         div.innerHTML +=
             '<i style="background:' + cramps(labels[i]) + '"></i> ' +
@@ -97,15 +108,27 @@ var drawMap = function(center, zoom){
 
 
 
-var mapmargin = 160;
-$('#map').css("height", ($(window).height()));
-$(window).on("resize", resize);
-resize();
-function resize(){
-    $('#map').css("height", ($(window).height() - mapmargin));
+var mapMargin = 148;
+$('#map').css("height", ($(window).height()  - mapMargin));
+$(window).on("resize", resizeMap);
+resizeMap();
+function resizeMap(){
+    $('#map').css("height", ($(window).height() - mapMargin));
     $('#map').css("margin-top",14);
     $('#map').css("margin-bottom",15);
 }
+
+
+var companyMargin = 432;
+$('#chart-row-company').css("height", ($(window).height() - companyMargin));
+$(window).on("resize", resize);
+resize();
+function resize(){
+    $('#chart-row-company').css("height", ($(window).height() - companyMargin));
+    $('#chart-row-company').css("margin-top",14);
+    $('#chart-row-company').css("margin-bottom",15);
+}
+
 
 drawMap([0, 0], 2);
 

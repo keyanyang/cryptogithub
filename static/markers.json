@@ -1,4 +1,23 @@
+
 [
+    {
+        "name": "Bitcoin-ABC/bitcoin-abc",
+        "watch": 136,
+        "star": 503,
+        "fork": 248,
+        "open_issues": 35,
+        "lang": "C++",
+        "created_time": "2017-05-01T09:58:15Z",
+        "commits": 14105,
+        "branches": 4,
+        "releases": 11,
+        "contributors": 441,
+        "lon":104.721548,
+        "lat":1.465056,
+        "region":"Singapore",
+        "address":"Singapore",
+        "logo": "https://pbs.twimg.com/profile_images/959963552298696704/5hE7ZLlV_400x400.jpg"
+    },
     {
         "name": "litecoin-project/litecoin",
         "watch": 545,
@@ -14,7 +33,8 @@
         "lon":103.850771,
         "lat":1.292363,
         "region":"Singapore",
-        "address":"111, NORTH BRIDGE ROAD, #08-19, PENINSULA PLAZA, SINGAPORE 179098"
+        "address":"111, NORTH BRIDGE ROAD, #08-19, PENINSULA PLAZA, SINGAPORE 179098",
+        "logo": "https://pbs.twimg.com/profile_images/681000222198112256/zd6UbNBV_400x400.png"
     },
     {
         "name": "input-output-hk/cardano-sl",
@@ -31,7 +51,8 @@
         "lon":114.159013,
         "lat":22.282052,
         "region":"Hong Kong",
-        "address":"Suites 2001-3, 20th Floor, St. George's Building 2, Ice House Street Central Hong Kong"
+        "address":"Suites 2001-3, 20th Floor, St. George's Building 2, Ice House Street Central Hong Kong",
+        "logo": "https://pbs.twimg.com/profile_images/756928232356769792/RrwbpR3p_400x400.jpg"
     },
     {
         "name": "neo-project/neo",
@@ -48,7 +69,8 @@
         "lon":116.458363,
         "lat":39.922515,
         "region":"China",
-        "address":"Beijing"
+        "address":"Beijing",
+        "logo": "https://pbs.twimg.com/profile_images/877916411108237312/QLVWgJb6_400x400.jpg"
     },
     {
         "name": "stellar/stellar-core",
@@ -65,7 +87,8 @@
         "lon":-122.418822,
         "lat":37.764295,
         "region":"USA",
-        "address": "160 Capp St, San Francisco, CA 94110"
+        "address": "160 Capp St, San Francisco, CA 94110",
+        "logo": "https://pbs.twimg.com/profile_images/642467386738606080/gcEn0VEI_400x400.png"
 
     },
     {
@@ -83,6 +106,7 @@
         "lon":-81.371746,
         "lat":19.288950,
         "region":"Grand Cayman Islands",
-        "address": "George Town"
+        "address": "George Town",
+        "logo": "https://pbs.twimg.com/profile_images/937746592332898305/sQ8mUV6b_400x400.jpg"
     }
 ]
